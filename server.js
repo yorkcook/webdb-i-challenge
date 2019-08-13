@@ -23,9 +23,9 @@ server.get("/accounts", (req, res) => {
 });
 
 server.post("/accounts", (req, res) => {
-  const post = req.body;
+  const account = req.body;
   db("accounts")
-    .insert(post, "id")
+    .insert(account, "id")
     .then(account => {
       res.status(201).json(account);
     })
